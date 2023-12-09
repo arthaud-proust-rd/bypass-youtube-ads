@@ -1,0 +1,27 @@
+{
+  "name": "bypass-youtube-ads",
+  "version": "0.0.0",
+  "description": "Automatic reload youtube video page until ads disapear.",
+  "devDependencies": {
+    "release-it": "^17.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "release-it --only-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arthaud-proust-rd/bypass-youtube-ads.git"
+  },
+  "keywords": [
+    "youtube",
+    "ads",
+    "adblock"
+  ],
+  "author": "Arthaud Proust",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthaud-proust-rd/bypass-youtube-ads/issues"
+  },
+  "homepage": "https://github.com/arthaud-proust-rd/bypass-youtube-ads#readme"
+}
