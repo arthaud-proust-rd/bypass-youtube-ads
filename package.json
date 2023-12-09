@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "description": "Automatic reload youtube video page until ads disapear.",
   "devDependencies": {
+    "husky": "^8.0.3",
     "release-it": "^17.0.1"
   },
   "scripts": {
+    "zip": "rm -f bypass-youtube-ads.zip && zip -r bypass-youtube-ads.zip src",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it --only-version"
+    "release": "release-it --only-version",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",

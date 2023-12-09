@@ -1,7 +1,7 @@
 {
   "git": {
     "commit": true,
-    "commitMessage": "Release ${version}",
+    "commitMessage": "chore: release ${version}",
     "tag": true,
     "push": true
   },
@@ -10,6 +10,7 @@
   },
   "github": {
     "release": true,
-    "releaseName": "Release ${version}"
+    "releaseName": "Release ${version}",
+    "assets": ["bypass-youtube-ads.zip"]
   }
 }
