@@ -1,19 +1,44 @@
-const reloadIfAds = () => {
-  console.log("reading ads?");
-  const isThereAds = !!document.querySelector(".video-ads *");
-  console.log(`ads: ${isThereAds ? "true" : "false"}`);
-
-  if (!isThereAds) {
-    console.log("so, don't do anything");
+(() => {
+  if (window.bypassingAds) {
     return;
   }
 
-  console.log("so, reloading");
-  document.location.reload();
-};
+  const VIDEO_MIN_TIME_IN_S = 5;
 
-const reloadIfAdsInterval = setInterval(reloadIfAds, 500);
+  const getVideoTimeInS = () => {
+    const [minStr, secondsStr] = document
+      .querySelector(".ytp-time-current")
+      .innerText.split(":");
 
-setTimeout(() => {
-  clearInterval(reloadIfAdsInterval);
-}, 3000);
+    return Number.parseInt(minStr) * 60 + Number.parseInt(secondsStr);
+  };
+
+  const reloadToTime = (timeInS) => {
+    if (timeInS < VIDEO_MIN_TIME_IN_S) {
+      window.location.reload();
+      return;
+    }
+
+    if (!("URLSearchParams" in window)) {
+      return;
+    }
+
+    const searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("t", `${timeInS}s`);
+    window.location.search = searchParams.toString();
+  };
+
+  const reloadIfAds = () => {
+    const isThereAds = !!document.querySelector(".video-ads *");
+
+    if (!isThereAds) {
+      return;
+    }
+
+    const time = getVideoTimeInS();
+    reloadToTime(time);
+  };
+
+  setInterval(reloadIfAds, 500);
+  window.bypassingAds = true;
+})();

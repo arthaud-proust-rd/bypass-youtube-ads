@@ -41,7 +41,7 @@ Based on that, I used to reload page manually each time I saw an ads. Now, it's 
 
 ## Possible improvements
 
+- [x] Handle ads in the middle of video
 - [ ] Auto mute ads
 - [ ] Some ads can be skipped after 5s. If bypass by reload takes more than 5s, we could rather check if we can skip ads.
 - [ ] Way to inform users that a new version is available (if a patch is deployed for example)
-- [ ] Enable imports to avoid duplicated code (require a bundler, not needed actually)
