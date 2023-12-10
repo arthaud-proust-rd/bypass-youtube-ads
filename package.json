@@ -1,6 +1,6 @@
 {
   "name": "bypass-youtube-ads",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Automatic reload youtube video page until ads disapear.",
   "devDependencies": {
     "husky": "^8.0.3",
