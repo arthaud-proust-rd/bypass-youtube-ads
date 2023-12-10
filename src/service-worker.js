@@ -1,25 +1,3 @@
-const annihilateAds = () => {
-  const reloadIfAds = () => {
-    console.log("reading ads?");
-    const isThereAds = !!document.querySelector(".video-ads *");
-    console.log(`ads: ${isThereAds ? "true" : "false"}`);
-
-    if (!isThereAds) {
-      console.log("so, don't do anything");
-      return;
-    }
-
-    console.log("so, reloading");
-    document.location.reload();
-  };
-
-  const reloadIfAdsInterval = setInterval(reloadIfAds, 500);
-
-  setTimeout(() => {
-    clearInterval(reloadIfAdsInterval);
-  }, 3000);
-};
-
 const YOUTUBE_VIDEO_URL = "https://www.youtube.com/watch?v=";
 
 const reloadPageIfYoutubeAds = (tab) => {
@@ -29,7 +7,7 @@ const reloadPageIfYoutubeAds = (tab) => {
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: annihilateAds,
+    files: ["content-script.js"],
   });
 };
 
