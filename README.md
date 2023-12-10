@@ -15,6 +15,7 @@
 2. In Chrome (or any chromium-based navigator like Brave or Arc), go to "Manage extensions"
 3. Enable "Developer mode"
 4. Click on "Load unpacked" and select "bypass-youtube-ads" folder
+5. That's it ! You can go to youtube.com to watch your video, the extension should now works. (You can check logs in the console).
 
 [Read an external "install extension in developer mode" tutorial here](https://bashvlas.com/blog/install-chrome-extension-in-developer-mode/)
 

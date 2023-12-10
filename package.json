@@ -7,7 +7,7 @@
     "release-it": "^17.0.1"
   },
   "scripts": {
-    "zip": "rm -f bypass-youtube-ads.zip && zip -r bypass-youtube-ads.zip src",
+    "zip": "rm -f bypass-youtube-ads.zip && cp -r src bypass-youtube-ads && zip -r bypass-youtube-ads.zip bypass-youtube-ads && rm -rf bypass-youtube-ads",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "release-it --only-version",
     "prepare": "husky install"
